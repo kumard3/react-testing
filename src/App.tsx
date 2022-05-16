@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+
 export default function App() {
-  //todo app with tailwind css
   const [todos, setTodos] = useState<string[]>([]);
   const [todo, setTodo] = useState("");
 
