@@ -13,7 +13,7 @@ export default function App() {
   const handleChange = (e) => {
     setTodo(e.target.value);
   };
-  console.log(todo); 
+  console.log(todos);
   return (
     <div className="bg-black text-white min-h-screen flex text-2xl font-mono flex-col justify-center items-center w-full">
       <form onSubmit={handleSubmit}>
@@ -23,7 +23,6 @@ export default function App() {
           className="bg-gray-800 rounded-l w-64 px-4 py-1 text-white focus:outline-none focus:shadow-outline"
           value={todo}
           onChange={handleChange}
-          required
         />
         <button
           type="submit"
@@ -33,14 +32,10 @@ export default function App() {
           Add
         </button>
       </form>
-      
+
       <ul data-testid="data-list">
-        {todos.map((todo, index) => {
-          return (
-            <li key={index}>
-              {todo}
-            </li>
-          );
+        {todos!.map((n, index) => {
+          return <div key={index}>{n}</div>;
         })}
       </ul>
     </div>
